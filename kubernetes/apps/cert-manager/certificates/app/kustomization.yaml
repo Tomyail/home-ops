@@ -1,0 +1,9 @@
+---
+# yaml-language-server: $schema=https://json.schemastore.org/kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ./certificates.yaml
+  # FIXME pushsecret to suppoert for bitwarden, the newsversion may support, but it is to hard to config
+  # so I using https://cert-manager.io/docs/devops-tips/syncing-secrets-across-namespaces/
+  # - ./pushsecret.yaml

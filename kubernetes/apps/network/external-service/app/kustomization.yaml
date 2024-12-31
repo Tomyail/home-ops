@@ -1,0 +1,18 @@
+---
+# yaml-language-server: $schema=https://json.schemastore.org/kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ./adguard.yaml
+  - ./omv.yaml
+  - ./gitlab.yaml
+  - ./registry.yaml
+  - ./jellyfin.yaml
+  - ./mp.yaml
+  - ./download.yaml
+  - ./seed.yaml
+  - ./pve.yaml
+  - ./portainer.yaml
+  - ./iyuu.yaml
+  - ./photo.yaml
+  - ./code-server.yaml

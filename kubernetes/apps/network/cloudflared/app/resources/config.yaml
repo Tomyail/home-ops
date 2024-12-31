@@ -1,0 +1,8 @@
+---
+originRequest:
+  originServerName: external.${SECRET_DOMAIN}
+
+ingress:
+  - hostname: "*.${SECRET_DOMAIN}"
+    service: http://nginx-external-controller.network.svc.cluster.local:80
+  - service: http_status:404
