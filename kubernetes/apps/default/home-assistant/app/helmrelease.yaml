@@ -23,8 +23,6 @@ spec:
       strategy: rollback
       retries: 3
   dependsOn:
-    # - name: rook-ceph-cluster
-    #   namespace: rook-ceph
     - name: volsync
       namespace: volsync-system
   values:
@@ -37,6 +35,9 @@ spec:
             image:
               repository: ghcr.io/onedr0p/home-assistant
               tag: 2024.12.5@sha256:638e519c874a06389ce6f03e435dd80a6697e8692eac88b459775839410f3439
+            env:
+              HASS_HTTP_TRUSTED_PROXY_1: 192.168.50.0/24
+              HASS_HTTP_TRUSTED_PROXY_2: 10.42.0.0/16
             envFrom:
               - secretRef:
                   name: home-assistant-secret
