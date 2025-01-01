@@ -119,10 +119,10 @@ tasks:
           monitor_group: internal
         - source_ip: 192.168.50.200
           source_port: 80
-          external: true
+          external: false
           internal: true
           name: omv
-          monitor_group: external
+          monitor_group: internal
         - source_ip: 192.168.50.171
           source_port: 8090
           external: true
