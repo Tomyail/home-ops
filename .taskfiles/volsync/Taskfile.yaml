@@ -103,11 +103,6 @@ tasks:
           external: true
           internal: true
           name: registry
-        - source_ip: 192.168.50.164
-          source_port: 8080
-          external: false
-          internal: true
-          name: code-server
         - source_ip: 192.168.50.170
           source_port: 9443
           external: false

@@ -14,4 +14,3 @@ resources:
   - ./portainer.yaml
   - ./iyuu.yaml
   - ./photo.yaml
-  - ./code-server.yaml
