@@ -9,13 +9,11 @@ data:
   config.yaml: |
     endpoints:
       - name: "${APP}"
-        group: internal
+        group: external
         url: "https://${GATUS_SUBDOMAIN:-${APP}}.${SECRET_DOMAIN}${GATUS_PATH:-/}"
         interval: 1m
         ui:
           hide-hostname: true
-        # client:
-        #   dns-resolver: tcp://1.1.1.1:53
         conditions:
           - "[STATUS] == ${GATUS_STATUS:-200}"
         # alerts:
