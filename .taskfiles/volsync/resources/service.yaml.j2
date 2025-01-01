@@ -63,3 +63,26 @@ spec:
                 port:
                   number: {{ target_port }}
 {% endif %}
+{%  if monitor == 'true' %}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "{{name}}-gatus-ep"
+  labels:
+    gatus.io/enabled: "true"
+data:
+  config.yaml: |
+    endpoints:
+      - name: "{{name}}"
+        group: internal
+        url: "https://{{name}}.${SECRET_DOMAIN}"
+        interval: 1m
+        ui:
+          hide-hostname: true
+        conditions:
+          - "[STATUS] == 200"
+        # alerts:
+        #   - type: pushover
+
+{% endif %}

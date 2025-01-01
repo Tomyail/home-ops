@@ -37,4 +37,25 @@ spec:
                 name: portainer
                 port:
                   number: 443
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "portainer-gatus-ep"
+  labels:
+    gatus.io/enabled: "true"
+data:
+  config.yaml: |
+    endpoints:
+      - name: "portainer"
+        group: internal
+        url: "https://portainer.${SECRET_DOMAIN}"
+        interval: 1m
+        ui:
+          hide-hostname: true
+        conditions:
+          - "[STATUS] == 200"
+        # alerts:
+        #   - type: pushover
+
 

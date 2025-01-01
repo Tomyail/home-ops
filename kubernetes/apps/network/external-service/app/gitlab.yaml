@@ -56,4 +56,25 @@ spec:
                 name: gitlab
                 port:
                   number: 80
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "gitlab-gatus-ep"
+  labels:
+    gatus.io/enabled: "true"
+data:
+  config.yaml: |
+    endpoints:
+      - name: "gitlab"
+        group: internal
+        url: "https://gitlab.${SECRET_DOMAIN}"
+        interval: 1m
+        ui:
+          hide-hostname: true
+        conditions:
+          - "[STATUS] == 200"
+        # alerts:
+        #   - type: pushover
+
 

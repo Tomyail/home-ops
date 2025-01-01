@@ -66,6 +66,7 @@ tasks:
           -D external={{.ITEM.external}} \
           -D internal_https={{.ITEM.internal_https}} \
           -D target_port={{default 80 .ITEM.target_port}} \
+          -D monitor={{default true .ITEM.monitor}} \
           > {{.DEST}}/{{.ITEM.name}}.yaml
     vars:
       DEST: '{{.ROOT_DIR}}//kubernetes/apps/network/external-service/app'
