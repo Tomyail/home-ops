@@ -88,11 +88,6 @@ tasks:
           external: true
           internal: true
           name: gitlab
-        - source_ip: 192.168.50.240
-          source_port: 9091
-          external: false
-          internal: true
-          name: seed
         - source_ip: 192.168.50.220
           source_port: 8096
           external: true

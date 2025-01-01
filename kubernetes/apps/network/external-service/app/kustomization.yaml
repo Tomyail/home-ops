@@ -10,7 +10,6 @@ resources:
   - ./jellyfin.yaml
   - ./mp.yaml
   - ./download.yaml
-  - ./seed.yaml
   - ./pve.yaml
   - ./portainer.yaml
   - ./iyuu.yaml
