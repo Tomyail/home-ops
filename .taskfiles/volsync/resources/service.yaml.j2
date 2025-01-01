@@ -63,7 +63,7 @@ spec:
                 port:
                   number: {{ target_port }}
 {% endif %}
-{%  if monitor == 'true' %}
+{%  if monitor_group == 'internal' %}
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -76,13 +76,39 @@ data:
     endpoints:
       - name: "{{name}}"
         group: internal
+        url: 1.1.1.1
+        interval: 1m
+        ui:
+          hide-hostname: true
+          hide-url: true
+        dns:
+          query-name: "{{name}}.${SECRET_DOMAIN}"
+          query-type: A
+        conditions:
+          - "len([BODY]) == 0"
+        # alerts:
+        #   - type: pushover
+{% endif %}
+{%  if monitor_group == 'external' %}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "{{name}}-gatus-ep"
+  labels:
+    gatus.io/enabled: "true"
+data:
+  config.yaml: |
+    endpoints:
+      - name: "{{name}}"
+        group: external
         url: "https://{{name}}.${SECRET_DOMAIN}"
         interval: 1m
         ui:
           hide-hostname: true
+          hide-url: true
         conditions:
           - "[STATUS] == 200"
         # alerts:
         #   - type: pushover
-
 {% endif %}

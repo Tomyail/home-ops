@@ -48,13 +48,16 @@ data:
     endpoints:
       - name: "adguard"
         group: internal
-        url: "https://adguard.${SECRET_DOMAIN}"
+        url: 1.1.1.1
         interval: 1m
         ui:
           hide-hostname: true
+          hide-url: true
+        dns:
+          query-name: "adguard.${SECRET_DOMAIN}"
+          query-type: A
         conditions:
-          - "[STATUS] == 200"
+          - "len([BODY]) == 0"
         # alerts:
         #   - type: pushover
-
 

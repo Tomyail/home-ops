@@ -66,7 +66,7 @@ tasks:
           -D external={{.ITEM.external}} \
           -D internal_https={{.ITEM.internal_https}} \
           -D target_port={{default 80 .ITEM.target_port}} \
-          -D monitor={{default true .ITEM.monitor}} \
+          -D monitor_group={{.ITEM.monitor_group}} \
           > {{.DEST}}/{{.ITEM.name}}.yaml
     vars:
       DEST: '{{.ROOT_DIR}}//kubernetes/apps/network/external-service/app'
@@ -76,6 +76,7 @@ tasks:
           external: false
           internal: true
           name: adguard
+          monitor_group: internal
         - source_ip: 192.168.50.100
           source_port: 8006
           external: false
@@ -83,26 +84,31 @@ tasks:
           internal_https: true
           target_port: 443
           name: pve
+          monitor_group: internal
         - source_ip: 192.168.50.178
           source_port: 80
           external: true
           internal: true
           name: gitlab
+          monitor_group: external
         - source_ip: 192.168.50.220
           source_port: 8096
           external: true
           internal: true
           name: jellyfin
+          monitor_group: external
         - source_ip: 192.168.50.200
           source_port: 2342
           external: false
           internal: true
           name: photo
+          monitor_group: internal
         - source_ip: 192.168.50.178
           source_port: 5050
           external: true
           internal: true
           name: registry
+          monitor_group: external
         - source_ip: 192.168.50.170
           source_port: 9443
           external: false
@@ -110,26 +116,31 @@ tasks:
           internal_https: true
           target_port: 443
           name: portainer
+          monitor_group: internal
         - source_ip: 192.168.50.200
           source_port: 80
           external: true
           internal: true
           name: omv
+          monitor_group: external
         - source_ip: 192.168.50.171
           source_port: 8090
           external: true
           internal: true
           name: download
+          monitor_group: external
         - source_ip: 192.168.50.170
           source_port: 8780
           external: false
           internal: true
           name: iyuu
+          monitor_group: internal
         - source_ip: 192.168.50.170
           source_port: 3000
           external: false
           internal: true
           name: mp
+          monitor_group: internal
     preconditions:
       - which minijinja-cli yq
 

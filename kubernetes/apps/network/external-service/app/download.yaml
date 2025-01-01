@@ -67,14 +67,14 @@ data:
   config.yaml: |
     endpoints:
       - name: "download"
-        group: internal
+        group: external
         url: "https://download.${SECRET_DOMAIN}"
         interval: 1m
         ui:
           hide-hostname: true
+          hide-url: true
         conditions:
           - "[STATUS] == 200"
         # alerts:
         #   - type: pushover
-
 

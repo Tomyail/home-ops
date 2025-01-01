@@ -67,14 +67,14 @@ data:
   config.yaml: |
     endpoints:
       - name: "omv"
-        group: internal
+        group: external
         url: "https://omv.${SECRET_DOMAIN}"
         interval: 1m
         ui:
           hide-hostname: true
+          hide-url: true
         conditions:
           - "[STATUS] == 200"
         # alerts:
         #   - type: pushover
-
 
