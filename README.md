@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/onedr0p/home-ops/main/docs/src/assets/logo.png" align="center" width="144px" height="144px"/>
+<img src="https://raw.githubusercontent.com/Tomyail/home-ops/main/logo.png" align="center" width="144px" height="144px"/>
 
 ### <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f680/512.gif" alt="🚀" width="16" height="16"> My Home Operations Repository <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f6a7/512.gif" alt="🚧" width="16" height="16">
 
@@ -12,7 +12,6 @@ _... managed with Flux, Renovate, and GitHub Actions_ <img src="https://fonts.gs
 
 [![Discord](https://img.shields.io/discord/673534664354430999?style=for-the-badge&label&logo=discord&logoColor=white&color=blue)](https://discord.gg/home-operations)&nbsp;&nbsp;
 [![Kubernetes](https://img.shields.io/endpoint?url=https%3A%2F%2Fkromgo.tomyail.com%2Fkubernetes_version&style=for-the-badge&logo=kubernetes&logoColor=white&color=blue&label=%20)](https://kubernetes.io)&nbsp;&nbsp;
-[![Renovate](https://img.shields.io/github/actions/workflow/status/onedr0p/home-ops/renovate.yaml?branch=main&label=&logo=renovatebot&style=for-the-badge&color=blue)](https://github.com/onedr0p/home-ops/actions/workflows/renovate.yaml)
 [![Status-Page](https://img.shields.io/uptimerobot/status/m798277065-6ebf858e537ac04b79e23625?label=Status%20Page&style=for-the-badge&color=blue&logo=statuspage)](https://status-dev.tomyail.com/)&nbsp;&nbsp;
 </div>
 
