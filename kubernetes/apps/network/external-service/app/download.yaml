@@ -75,6 +75,6 @@ data:
           hide-url: true
         conditions:
           - "[STATUS] == 200"
-        # alerts:
-        #   - type: pushover
+        alerts:
+          - type: pushover
 

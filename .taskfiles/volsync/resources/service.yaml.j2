@@ -86,8 +86,8 @@ data:
           query-type: A
         conditions:
           - "len([BODY]) == 0"
-        # alerts:
-        #   - type: pushover
+        alerts:
+          - type: pushover
 {% endif %}
 {%  if monitor_group == 'external' %}
 ---
@@ -109,6 +109,6 @@ data:
           hide-url: true
         conditions:
           - "[STATUS] == 200"
-        # alerts:
-        #   - type: pushover
+        alerts:
+          - type: pushover
 {% endif %}

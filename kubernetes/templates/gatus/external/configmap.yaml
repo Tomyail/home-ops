@@ -16,5 +16,5 @@ data:
           hide-hostname: true
         conditions:
           - "[STATUS] == ${GATUS_STATUS:-200}"
-        # alerts:
-        #   - type: pushover
+        alerts:
+          - type: pushover

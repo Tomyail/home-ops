@@ -16,5 +16,5 @@ data:
           hide-hostname: true
         conditions:
           - "[STATUS] == 404"
-        # alerts:
-        #   - type: pushover
+        alerts:
+          - type: pushover
