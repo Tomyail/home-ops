@@ -6,7 +6,7 @@ creation_rules:
       - age:
           - "age17hs3k9rfp2n3xn38nl8kks4sppj4n98dxfxdhe2x73d86sh0t54slpn33d"
   - path_regex: kubernetes/.*\.sops\.ya?ml
-    encrypted_regex: "^(data|stringData|url)$"
+    encrypted_regex: "^(data|stringData)$"
     key_groups:
       - age:
           - "age17hs3k9rfp2n3xn38nl8kks4sppj4n98dxfxdhe2x73d86sh0t54slpn33d"
