@@ -14,7 +14,7 @@ concurrency:
 jobs:
   archlinux:
     name: workstation (archlinux)
-    runs-on: ubuntu-latest
+    runs-on: ["gha-runner-scale-set"]
     container:
       image: greyltc/archlinux-aur:yay
       options: --user root
@@ -33,7 +33,7 @@ jobs:
 
   generic-linux:
     name: workstation (generic-linux)
-    runs-on: ubuntu-latest
+    runs-on: ["gha-runner-scale-set"]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -53,7 +53,7 @@ jobs:
   configure:
     if: ${{ github.repository == 'onedr0p/cluster-template' }}
     name: configure
-    runs-on: ubuntu-latest
+    runs-on: ["gha-runner-scale-set"]
     strategy:
       fail-fast: false
       matrix:
