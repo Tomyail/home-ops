@@ -8,3 +8,4 @@ resources:
   # Flux-Kustomizations
   - ./gha-runner-scale-set-controller/ks.yaml
   - ./gha-runner-scale-set/ks.yaml
+  - ./gha-runner-scale-set2/ks.yaml
