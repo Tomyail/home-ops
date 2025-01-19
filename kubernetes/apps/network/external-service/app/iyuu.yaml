@@ -60,4 +60,15 @@ data:
           - "len([BODY]) == 0"
         alerts:
           - type: pushover
+      - name: "iyuu"
+        group: internal-up
+        url: "https://iyuu.${SECRET_DOMAIN}"
+        interval: 1m
+        ui:
+          hide-hostname: true
+          hide-url: true
+        conditions:
+          - "[STATUS] == 200"
+        alerts:
+          - type: pushover
 

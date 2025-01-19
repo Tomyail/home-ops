@@ -61,4 +61,15 @@ data:
           - "len([BODY]) == 0"
         alerts:
           - type: pushover
+      - name: "pve"
+        group: internal-up
+        url: "https://pve.${SECRET_DOMAIN}"
+        interval: 1m
+        ui:
+          hide-hostname: true
+          hide-url: true
+        conditions:
+          - "[STATUS] == 200"
+        alerts:
+          - type: pushover
 
