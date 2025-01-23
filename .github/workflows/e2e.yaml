@@ -38,13 +38,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xz-utils
+
       - name: Setup Homebrew
         id: setup-homebrew
         uses: Homebrew/actions/setup-homebrew@master
 
       - name: Setup Workflow Tools
         shell: bash
-        run: brew install go-task
+        run: brew install go-task helm
 
       - name: Run Workstation Generic linux tasks
         shell: bash
@@ -91,7 +96,7 @@ jobs:
       - name: Setup Workflow Tools
         if: ${{ github.event_name == 'pull_request' && steps.cache-homebrew-packages.outputs.cache-hit != 'true' }}
         shell: bash
-        run: brew install go-task
+        run: brew install go-task helm
 
       - name: Run Workstation Brew tasks
         if: ${{ github.event_name == 'pull_request' && steps.cache-homebrew-packages.outputs.cache-hit != 'true' }}

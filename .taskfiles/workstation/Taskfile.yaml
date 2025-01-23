@@ -71,7 +71,6 @@ tasks:
           curl -sSfL -o sops https://github.com/getsops/sops/releases/latest/download/sops-v3.9.3.linux.arm64
         platforms: ['linux/arm64']
       - cmd: chmod +x kubectl sops
-      - cmd: curl -sSfL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
       - cmd: curl -sSfL https://github.com/mitsuhiko/minijinja/releases/latest/download/minijinja-cli-installer.sh | bash
     env:
       MINIJINJA_CLI_INSTALL_DIR: '.'
