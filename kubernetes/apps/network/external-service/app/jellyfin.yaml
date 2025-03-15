@@ -4,7 +4,7 @@ metadata:
   name: jellyfin
 subsets:
   - addresses:
-      - ip: 192.168.50.220
+      - ip: 192.168.50.221
     ports:
       - port: 8096
 ---
