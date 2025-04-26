@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/kustomize.toolkit.fluxcd.io/kustomization_v1.json
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: &app minio-sync # Changed name to reflect the task
+  namespace: flux-system
+spec:
+  targetNamespace: default
+  commonMetadata:
+    labels:
+      app.kubernetes.io/name: *app
+  dependsOn:
+    - name: external-secrets # Explicit dependency on external-secrets controller being ready
+    # Add other dependencies if needed, e.g., MinIO instances if managed by Flux
+    # - name: minio-deployment
+  path: ./kubernetes/apps/default/sync-mino/app # Point to the app subdirectory
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: home-kubernetes # Assuming your GitRepository is named 'home-kubernetes'
+  wait: false # Don't wait for CronJob readiness (Jobs run and complete)
+  interval: 10m # Sync interval, adjust as needed
+  retryInterval: 1m
+  timeout: 5m
+  # No postBuild substitutions needed for this simple case

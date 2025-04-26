@@ -1,0 +1,31 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: minio-bucket-sync
+  # namespace: default # Namespace is inherited from kustomization.yaml
+spec:
+  schedule: "0 3 * * *" # Run daily at 3:00 AM, adjust as needed
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: rclone-sync
+            image: rclone/rclone:latest # Use specific version if preferred
+            command: ["/bin/sh", "-c"] # Use shell to run multiple commands
+            args:
+              - |
+                set -e # Exit immediately if a command exits with a non-zero status.
+                echo "Starting MinIO sync..."
+                rclone sync -v "miniosrc:db-backups" "miniodst:prod-db-backups" && \
+                echo "Syncing obsidian..." && \
+                rclone sync -v "miniosrc:obsidian" "miniodst:obsidian" && \
+                echo "Syncing restic-backup..." && \
+                rclone sync -v "miniosrc:restic-backup" "miniodst:restic-backup" && \
+                echo "Syncing user..." && \
+                rclone sync -v "miniosrc:user" "miniodst:user"
+                echo "MinIO sync finished successfully."
+            envFrom:
+            - secretRef:
+                name: minio-sync-secret
+          restartPolicy: OnFailure
