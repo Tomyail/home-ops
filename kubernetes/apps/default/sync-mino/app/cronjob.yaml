@@ -5,6 +5,8 @@ metadata:
   # namespace: default # Namespace is inherited from kustomization.yaml
 spec:
   schedule: "0 3 * * *" # Run daily at 3:00 AM, adjust as needed
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 1
   jobTemplate:
     spec:
       template:
