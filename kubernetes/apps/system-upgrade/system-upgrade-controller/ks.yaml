@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./system-upgrade-controller/app
+  path: ./kubernetes/apps/system-upgrade/system-upgrade-controller/app
   prune: true
   sourceRef:
     kind: GitRepository
@@ -21,7 +21,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./system-upgrade-controller/plans
+  path: ./kubernetes/apps/system-upgrade/system-upgrade-controller/plans
   prune: true
   sourceRef:
     kind: GitRepository
