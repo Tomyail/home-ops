@@ -1,0 +1,31 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: system-upgrade-controller-app
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  path: ./system-upgrade-controller/app
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: home-ops
+    namespace: flux-system
+  targetNamespace: system-upgrade
+  wait: true
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: system-upgrade-controller-plans
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  path: ./system-upgrade-controller/plans
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: home-ops
+    namespace: flux-system
+  targetNamespace: system-upgrade
+  wait: true

@@ -1,0 +1,3 @@
+resources:
+  - plan-server.yaml
+  - plan-agent.yaml
