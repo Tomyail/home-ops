@@ -149,15 +149,6 @@ spec:
           gnetId: 20842
           revision: 3
           datasource: Prometheus
-        cloudnative-pg:
-          url: https://raw.githubusercontent.com/cloudnative-pg/cloudnative-pg/main/docs/src/samples/monitoring/grafana-dashboard.json
-          datasource: Prometheus
-        home-assistant:
-          url: https://raw.githubusercontent.com/billimek/k8s-gitops/master/monitoring/grafana/dashboards/home_assistant.json
-          datasource: home_assistant
-        loki-logs:
-          url: https://raw.githubusercontent.com/billimek/k8s-gitops/master/monitoring/grafana/dashboards/loki_logs.json
-          datasource: Loki
         # Ref: https://grafana.com/grafana/dashboards/1860-node-exporter-full/
         node-exporter-full:
           gnetId: 1860
@@ -167,12 +158,7 @@ spec:
           url: https://raw.githubusercontent.com/kubernetes-sigs/node-feature-discovery/master/examples/grafana-dashboard.json
           datasource:
             - { name: DS_PROMETHEUS, value: Prometheus }
-        opnsense:
-          url: https://raw.githubusercontent.com/billimek/k8s-gitops/master/monitoring/grafana/dashboards/opnsense.json
-          datasource: Prometheus
-        prometheus-exporter-summary:
-          url: https://raw.githubusercontent.com/billimek/k8s-gitops/master/monitoring/grafana/dashboards/prometheus_exporter_summary.json
-          datasource: Prometheus
+
         smartctl:
           gnetId: 22604
           revision: 2
