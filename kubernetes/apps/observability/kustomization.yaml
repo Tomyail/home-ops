@@ -14,4 +14,4 @@ resources:
   - ./loki/ks.yaml
   - ./kromgo/ks.yaml
   # - ./pushgateway/ks.yaml
-  # - ./promtail/ks.yaml
+  - ./promtail/ks.yaml
