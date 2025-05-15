@@ -42,8 +42,10 @@ spec:
       alertmanagerSpec:
         nodeSelector:
           kubernetes.io/hostname: "k3s-master"
-        useExistingSecret: true
-        configSecret: alertmanager-secret
+        alertmanagerConfiguration:
+          name: alertmanager
+          global:
+            resolveTimeout: 5m
         storage:
           volumeClaimTemplate:
             # metadata:
