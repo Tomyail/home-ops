@@ -36,7 +36,7 @@ spec:
         prefectTag: 3-python3.9-kubernetes
         debug: true
 
-      prefectApiUrl: http://localhost:4200/api
+      # prefectApiUrl: http://localhost:4200/api
 
       uiConfig:
         enabled: true
