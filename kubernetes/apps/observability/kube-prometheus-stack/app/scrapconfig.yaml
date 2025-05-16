@@ -7,10 +7,10 @@ metadata:
   namespace: observability
 spec:
   staticConfigs:
-    - targets: ["192.168.50.100:9633", "192.168.50.200:9633"]
+    - targets: ["192.168.50.100:9633", "192.168.50.200:9633","192.168.50.220:9633"]
   metricsPath: /metrics
   honorTimestamps: true
-  # scrapeInterval: 4h
+  scrapeInterval: 4h
   relabelings:
     - action: replace
       targetLabel: job
