@@ -1,0 +1,13 @@
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: nfs-ssd
+provisioner: nfs.csi.k8s.io
+parameters:
+  server: 192.168.50.200
+  share: /export/ssd_data
+reclaimPolicy: Delete
+volumeBindingMode: Immediate
+mountOptions: ["hard", "noatime", "nconnect=12"]
+

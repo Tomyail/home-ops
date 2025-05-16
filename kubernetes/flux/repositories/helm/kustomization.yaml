@@ -37,4 +37,5 @@ resources:
   - ./kubernetes-dashboard.yaml
   - ./hajimari.yaml
   - ./prefect.yaml
+  - ./csi-driver-nfs.yaml
   # - ./stevehipwell.yaml
