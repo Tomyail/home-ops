@@ -14,3 +14,4 @@ resources:
   - ./kromgo/ks.yaml
   # - ./pushgateway/ks.yaml
   - ./promtail/ks.yaml
+  - ./thanos/ks.yaml
