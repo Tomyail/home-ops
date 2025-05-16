@@ -91,6 +91,10 @@ spec:
     kubeProxy:
       enabled: false
     prometheus:
+      thanosService:
+        enabled: true
+      thanosServiceMonitor:
+        enabled: true
       ingress:
         enabled: true
         annotations:
@@ -99,6 +103,15 @@ spec:
         hosts: ["prometheus-dev.${SECRET_DOMAIN}"]
         pathType: Prefix
       prometheusSpec:
+        podMetadata:
+          annotations:
+            secret.reloader.stakater.com/reload: thanos-secret
+        thanos:
+          image: quay.io/thanos/thanos:v0.38.0
+          objectStorageConfig:
+            existingSecret:
+              name: thanos-secret
+              key: objstore.yml
         nodeSelector:
           kubernetes.io/hostname: "k3s-master"
         additionalArgs:
