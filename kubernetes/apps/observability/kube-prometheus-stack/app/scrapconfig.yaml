@@ -10,7 +10,7 @@ spec:
     - targets: ["192.168.50.100:9633", "192.168.50.200:9633","192.168.50.220:9633"]
   metricsPath: /metrics
   honorTimestamps: true
-  scrapeInterval: 4h
+  scrapeInterval: 30m
   relabelings:
     - action: replace
       targetLabel: job
