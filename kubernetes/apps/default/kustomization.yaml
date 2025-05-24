@@ -16,3 +16,4 @@ resources:
   - ./hajimari/ks.yaml
   - ./prefect/ks.yaml
   - ./sync-mino/ks.yaml
+  - ./calibre-web-automated/ks.yaml
