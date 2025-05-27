@@ -31,8 +31,10 @@ spec:
     defaultPodOptions:
       enableServiceLinks: false
       securityContext:
-        runAsUser: 568
-        runAsGroup: 568
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
+        fsGroupChangePolicy: OnRootMismatch
     controllers:
       navidrome:
         containers:
@@ -49,7 +51,7 @@ spec:
               ND_PROMETHEUS_ENABLED: "true"
               # ND_REVERSEPROXYUSERHEADER: Remote-User
               # ND_REVERSEPROXYWHITELIST: 0.0.0.0/0
-              ND_SCANSCHEDULE: "@every 1h"
+              ND_SCANSCHEDULE: "@every 2h"
               ND_SESSIONTIMEOUT: 24h
             resources:
               requests:
@@ -88,11 +90,13 @@ spec:
                   port: http
     persistence:
       config:
-        # retain: true
-        enabled: true
-        existingClaim: *app
+        existingClaim: navidrome
         globalMounts:
           - path: /config
+      cache:
+        type: emptyDir
+        globalMounts:
+          - path: /config/cache
       music:
         type: nfs
         server: 192.168.50.200

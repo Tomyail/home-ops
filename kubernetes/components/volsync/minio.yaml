@@ -41,15 +41,15 @@ spec:
   trigger:
     schedule: "0 * * * *"
   restic:
-    copyMethod: "${VOLSYNC_COPYMETHOD:-Direct}"
-    storageClassName: "${VOLSYNC_STORAGECLASS:-local-path}"
-    accessModes: ["${VOLSYNC_SNAP_ACCESSMODES:-ReadWriteOnce}"]
+    copyMethod: Direct
+    storageClassName: nfs-omv-ssd
+    accessModes: [ReadWriteOnce]
     pruneIntervalDays: 7
     repository: "${APP}-volsync-secret"
     moverSecurityContext:
-      runAsUser: ${VOLSYNC_PUID:-1000}
-      runAsGroup: ${VOLSYNC_PGID:-1000}
-      fsGroup: ${VOLSYNC_PGID:-1000}
+      runAsUser: 1000
+      runAsGroup: 1000
+      fsGroup: 1000
     retain:
       hourly: 24
       daily: 7
