@@ -10,6 +10,8 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
+  # components:
+    # - ../../../../templates/volsync2
   path: ./kubernetes/apps/database/pgadmin/app
   prune: true
   sourceRef:
@@ -26,6 +28,6 @@ spec:
   postBuild:
     substitute:
       APP: *app
-      VOLSYNC_CAPACITY: 2Gi
-      VOLSYNC_UID: "5050"
-      VOLSYNC_GID: "5050"
+      VOLSYNC_CAPACITY: 1Gi
+      VOLSYNC_UID: "1000"
+      VOLSYNC_GID: "1000"
