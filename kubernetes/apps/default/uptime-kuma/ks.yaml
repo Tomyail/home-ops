@@ -10,8 +10,11 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
+  components:
+    - ../../../../components/volsync
   dependsOn:
     - name: external-secrets
+    - name: volsync
   path: ./kubernetes/apps/default/uptime-kuma/app
   prune: true
   sourceRef:
@@ -24,5 +27,4 @@ spec:
   postBuild:
     substitute:
       APP: *app
-      GATUS_SUBDOMAIN: uptime-kuma
-      VOLSYNC_CAPACITY: 2Gi
+      GATUS_SUBDOMAIN: *app
