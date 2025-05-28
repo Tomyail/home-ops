@@ -70,10 +70,6 @@ spec:
         fsGroup: 1000
         fsGroupChangePolicy: OnRootMismatch
     persistence:
-      # cache:
-      #   existingClaim: jellyseerr-cache
-      #   globalMounts:
-      #     - path: /app/config/cache
       config:
         existingClaim: *app
         globalMounts:
