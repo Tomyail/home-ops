@@ -10,17 +10,15 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  # components:
-    # - ../../../../templates/volsync2
+  components:
+    - ../../../../templates/volsync
   path: ./kubernetes/apps/database/pgadmin/app
   prune: true
   sourceRef:
     kind: GitRepository
     name: home-kubernetes
-  # dependsOn:
-  #   - name: rook-ceph-cluster
-  #   - name: external-secrets-stores
-  #   - name: volsync
+  dependsOn:
+    - name: volsync
   wait: false
   interval: 30m
   retryInterval: 1m

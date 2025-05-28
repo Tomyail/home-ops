@@ -76,10 +76,6 @@ spec:
               - *host
     persistence:
       config:
-        enabled: true
-        accessMode: ReadWriteOnce
-        size: 1Gi
-        storageClass: nfs-omv-ssd
-        # existingClaim: *app
+        existingClaim: *app
         globalMounts:
           - path: /var/lib/pgadmin
