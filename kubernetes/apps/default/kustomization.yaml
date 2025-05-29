@@ -19,3 +19,4 @@ resources:
   - ./calibre-web-automated/ks.yaml
   - ./paperless/ks.yaml
   - ./prowlarr/ks.yaml
+  - ./radarr/ks.yaml
