@@ -20,3 +20,4 @@ resources:
   - ./paperless/ks.yaml
   - ./prowlarr/ks.yaml
   - ./radarr/ks.yaml
+  - ./lidarr/ks.yaml
