@@ -104,7 +104,13 @@ spec:
       media:
         type: nfs
         server: 192.168.50.200
+        path: /export/media/movie
+      download:
+        type: nfs
+        server: 192.168.50.200
         path: /export/pt_favor_media/movie
+        globalMounts:
+          - path: /pt/movie
       tmp:
         type: emptyDir
     service:
