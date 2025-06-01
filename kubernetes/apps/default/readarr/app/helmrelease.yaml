@@ -33,10 +33,12 @@ spec:
               tag: 0.4.16.2793@sha256:29712f76a7f7a45ba93854b313cb36d1fa8370a6affdebd93a7b6397446099ad
             env:
               READARR__PORT: &port 8787
-              READARR__LOG_LEVEL: info
               READARR__APP__INSTANCENAME: Readarr
+              READARR__APP__THEME: auto
               READARR__AUTH__METHOD: External
               READARR__AUTH__REQUIRED: DisabledForLocalAddresses
+              READARR__LOG__LEVEL: info
+              READARR__UPDATE__BRANCH: develop
             resources:
               requests:
                 cpu: 10m
