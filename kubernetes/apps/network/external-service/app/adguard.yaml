@@ -4,9 +4,9 @@ metadata:
   name: adguard
 subsets:
   - addresses:
-      - ip: 192.168.50.1
+      - ip: 192.168.50.137
     ports:
-      - port: 3000
+      - port: 80
 ---
 apiVersion: v1
 kind: Service
