@@ -24,3 +24,4 @@ resources:
   - ./sonarr/ks.yaml
   - ./readarr/ks.yaml
   - ./recyclarr/ks.yaml
+  - ./n8n/ks.yaml
