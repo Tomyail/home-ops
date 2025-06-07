@@ -7,11 +7,11 @@ metadata:
 spec:
   provider:
     webhook:
-      url: http://bitwarden:8087/object/item/{{ .remoteRef.key }}
+      url: "http://bitwarden.external-secrets.svc.cluster.local:8087/object/item/{{ .remoteRef.key }}"
       headers:
         Content-Type: application/json
       result:
-        jsonPath: $.data.login.{{ .remoteRef.property }}
+        jsonPath: "$.data.login.{{ .remoteRef.property }} || $.data[0].login.{{ .remoteRef.property }}"
 ---
 # yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/external-secrets.io/clustersecretstore_v1beta1.json
 apiVersion: external-secrets.io/v1
@@ -21,9 +21,9 @@ metadata:
 spec:
   provider:
     webhook:
-      url: http://bitwarden:8087/object/item/{{ .remoteRef.key }}
+      url: "http://bitwarden.external-secrets.svc.cluster.local:8087/object/item/{{ .remoteRef.key }}"
       result:
-        jsonPath: $.data.fields[?@.name=="{{ .remoteRef.property }}"].value
+        jsonPath: "$.data.fields[?@.name==\"{{ .remoteRef.property }}\"].value || $.data[0].fields[?@.name==\"{{ .remoteRef.property }}\"].value"
 ---
 # yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/external-secrets.io/clustersecretstore_v1beta1.json
 apiVersion: external-secrets.io/v1
@@ -33,6 +33,6 @@ metadata:
 spec:
   provider:
     webhook:
-      url: http://bitwarden:8087/object/item/{{ .remoteRef.key }}
+      url: "http://bitwarden.external-secrets.svc.cluster.local:8087/object/item/{{ .remoteRef.key }}"
       result:
-        jsonPath: $.data.notes
+        jsonPath: "$.data.notes || $.data[0].notes"
