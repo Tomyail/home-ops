@@ -1,0 +1,23 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: external-secrets-to-bitwarden-api
+  namespace: external-secrets
+spec:
+  podSelector:
+    matchLabels:
+      app.kubernetes.io/instance: bitwarden
+      app.kubernetes.io/name: bitwarden
+  policyTypes:
+    - Ingress
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              app.kubernetes.io/instance: external-secrets
+              app.kubernetes.io/name: external-secrets
+        - podSelector:
+            matchLabels:
+              app.kubernetes.io/instance: external-secrets
+              app.kubernetes.io/name: external-secrets-webhook
