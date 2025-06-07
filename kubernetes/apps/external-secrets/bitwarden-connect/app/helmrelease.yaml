@@ -39,6 +39,12 @@ spec:
           appID: "BW_USERNAME"
           # -- secret key for Bitwarden hostname to use to grab secrets in the pod
           host: "BW_HOST"
+        livenessProbe:
+          initialDelaySeconds: 20
+          failureThreshold: 30
+          timeoutSeconds: 30
+          periodSeconds: 300
+
     installCRDs: true
     serviceMonitor:
       enabled: true
