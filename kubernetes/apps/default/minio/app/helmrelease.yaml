@@ -102,18 +102,18 @@ spec:
           external-dns.alpha.kubernetes.io/target: "192.168.50.160,192.168.50.182,192.168.50.234"
         className: internal
         hosts:
-          - host: s3.${SECRET_DOMAIN}
-            paths:
-              - path: /
-                service:
-                  identifier: app
-                  port: http
           - host: s3-api.${SECRET_DOMAIN}
             paths:
               - path: /
                 service:
                   identifier: app
                   port: s3
+          - host: s3.${SECRET_DOMAIN}
+            paths:
+              - path: /
+                service:
+                  identifier: app
+                  port: http
     persistence:
       data:
         type: nfs
