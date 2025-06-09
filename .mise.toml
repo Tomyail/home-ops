@@ -5,7 +5,6 @@ SOPS_AGE_KEY_FILE = "{{config_root}}/age.key"
 
 [tools]
 "python" = "3.13"
-"aqua:cilium/cilium-cli" = "0.18.3"
 "aqua:cli/cli" = "2.73.0"
 "aqua:cue-lang/cue" = "0.13.0"
 "aqua:FiloSottile/age" = "1.2.1"
