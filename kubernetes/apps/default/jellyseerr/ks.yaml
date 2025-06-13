@@ -11,6 +11,9 @@ spec:
       app.kubernetes.io/name: *app
   components:
     - ../../../../components/volsync
+  dependsOn:
+    - name: external-secrets
+    - name: volsync
   path: ./kubernetes/apps/default/jellyseerr/app
   prune: true
   sourceRef:
