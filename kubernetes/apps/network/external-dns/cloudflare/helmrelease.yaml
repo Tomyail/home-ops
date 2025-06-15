@@ -49,8 +49,8 @@ spec:
       - --ingress-class=external
     policy: sync
     sources: ["crd", "ingress"]
-    txtOwnerId: default
-    txtPrefix: k8s.
+    txtOwnerId: pve
+    txtPrefix: k3s.
     domainFilters: ["${SECRET_DOMAIN}"]
     serviceMonitor:
       enabled: true
