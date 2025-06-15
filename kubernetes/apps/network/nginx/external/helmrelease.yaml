@@ -34,7 +34,7 @@ spec:
       service:
         type: ClusterIP
         annotations:
-          external-dns.alpha.kubernetes.io/hostname: external.${SECRET_DOMAIN}
+          external-dns.alpha.kubernetes.io/hostname: external-old.${SECRET_DOMAIN}
           # io.cilium/lb-ipam-ips: 192.168.50.234
       ingressClassResource:
         name: external

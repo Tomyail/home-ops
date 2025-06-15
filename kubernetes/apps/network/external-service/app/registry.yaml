@@ -42,7 +42,7 @@ kind: Ingress
 metadata:
   name: registry
   annotations:
-    external-dns.alpha.kubernetes.io/target: external.${SECRET_DOMAIN}
+    external-dns.alpha.kubernetes.io/target: external-old.${SECRET_DOMAIN}
 spec:
   ingressClassName: external
   rules:
