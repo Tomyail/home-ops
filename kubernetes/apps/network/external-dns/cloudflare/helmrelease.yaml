@@ -50,7 +50,7 @@ spec:
     policy: sync
     sources: ["crd", "ingress"]
     txtOwnerId: pve
-    txtPrefix: k3s.
+    txtPrefix: k3spve.
     domainFilters: ["${SECRET_DOMAIN}"]
     serviceMonitor:
       enabled: true
