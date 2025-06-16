@@ -16,26 +16,7 @@ spec:
   ports:
     - port: 80
       targetPort: 8090
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: download-internal
-  annotations:
-    external-dns.alpha.kubernetes.io/target: "192.168.50.160,192.168.50.182,192.168.50.234"
-spec:
-  ingressClassName: internal
-  rules:
-    - host: download.${SECRET_DOMAIN}
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: download
-                port:
-                  number: 80
+
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
