@@ -54,7 +54,7 @@ spec:
     triggerLoopOnEvent: true
     policy: sync
     registry: noop
-
+    sources: ["ingress"]
     extraArgs:
       - --webhook-provider-url=http://localhost:8888
       - --ingress-class=internal
