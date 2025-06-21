@@ -12,7 +12,7 @@ resources:
   - ./cookiecloud/ks.yaml
   - ./uptime-kuma/ks.yaml
   - ./minio/ks.yaml
-  - ./navidrome/ks.yaml
+  # - ./navidrome/ks.yaml
   - ./hajimari/ks.yaml
   - ./prefect/ks.yaml
   - ./sync-mino/ks.yaml
