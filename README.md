@@ -8,27 +8,18 @@ _... managed with Flux, Renovate, and GitHub Actions_ <img src="https://fonts.gs
 
 </div>
 
-<div align="center">
 
-[![Discord](https://img.shields.io/discord/673534664354430999?style=for-the-badge&label&logo=discord&logoColor=white&color=blue)](https://discord.gg/home-operations)&nbsp;&nbsp;
-[![Kubernetes](https://img.shields.io/endpoint?url=https%3A%2F%2Fkromgo.tomyail.com%2Fkubernetes_version&style=for-the-badge&logo=kubernetes&logoColor=white&color=blue&label=%20)](https://kubernetes.io)&nbsp;&nbsp;
-[![Status-Page](https://img.shields.io/uptimerobot/status/m798277065-6ebf858e537ac04b79e23625?label=Status%20Page&style=for-the-badge&color=blue&logo=statuspage)](https://status-dev.tomyail.com/)&nbsp;&nbsp;
-</div>
+---
 
-<div align="center">
+## <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/26a0/512.gif" alt="⚠️" width="20" height="20"> **IMPORTANT NOTICE**
 
-
-[![Age-Days](https://img.shields.io/endpoint?url=https%3A%2F%2Fkromgo.tomyail.com%2Fcluster_age_days&style=flat-square&label=Age)](https://github.com/kashalls/kromgo)&nbsp;&nbsp;
-[![Uptime-Days](https://img.shields.io/endpoint?url=https%3A%2F%2Fkromgo.tomyail.com%2Fcluster_uptime_days&style=flat-square&label=Uptime)](https://github.com/kashalls/kromgo)&nbsp;&nbsp;
-[![Node-Count](https://img.shields.io/endpoint?url=https%3A%2F%2Fkromgo.tomyail.com%2Fcluster_node_count&style=flat-square&label=Nodes)](https://github.com/kashalls/kromgo)&nbsp;&nbsp;
-[![Pod-Count](https://img.shields.io/endpoint?url=https%3A%2F%2Fkromgo.tomyail.com%2Fcluster_pods_running&style=flat-square&label=Pods)](https://github.com/kashalls/kromgo)&nbsp;&nbsp;
-
-[![CPU-Usage](https://img.shields.io/endpoint?url=https%3A%2F%2Fkromgo.tomyail.com%2Fcluster_cpu_usage&style=flat-square&label=CPU)](https://github.com/kashalls/kromgo)&nbsp;&nbsp;
-[![Memory-Usage](https://img.shields.io/endpoint?url=https%3A%2F%2Fkromgo.tomyail.com%2Fcluster_memory_usage&style=flat-square&label=Memory)](https://github.com/kashalls/kromgo)&nbsp;&nbsp;
-[![Network(⬆️)](https://img.shields.io/endpoint?url=https%3A%2F%2Fkromgo.tomyail.com%2Fcluster_network_transmit_usage&style=flat-square&label=Network⬆️)](https://github.com/kashalls/kromgo)&nbsp;&nbsp;
-[![Network(⬇️)](https://img.shields.io/endpoint?url=https%3A%2F%2Fkromgo.tomyail.com%2Fcluster_network_receive_usage&style=flat-square&label=Network⬇️)](https://github.com/kashalls/kromgo)&nbsp;&nbsp;
-
-</div>
+> **This project is no longer maintained** ⚠️
+> 
+> This repository contains my previous K3s-based home infrastructure setup. I have migrated to **Talos Linux** for better security, reliability, and maintainability.
+> 
+> **🚀 New Repository:** [https://github.com/Tomyail/talos-cluster](https://github.com/Tomyail/talos-cluster)
+> 
+> The new Talos cluster repository contains my current home infrastructure setup with improved architecture and modern practices.
 
 ---
 
