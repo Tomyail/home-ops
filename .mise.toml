@@ -5,7 +5,7 @@ SOPS_AGE_KEY_FILE = "{{config_root}}/age.key"
 
 [tools]
 "python" = "3.13"
-"aqua:cli/cli" = "2.73.0"
+"aqua:cli/cli" = "2.74.2"
 "aqua:cue-lang/cue" = "0.13.0"
 "aqua:FiloSottile/age" = "1.2.1"
 "aqua:fluxcd/flux2" = "2.5.1"
